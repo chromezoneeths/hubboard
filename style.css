@@ -1,0 +1,203 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: top;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  overflow: hidden;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**/
+span {
+  font-size: 16px;
+}
+
+.col {
+  width: 20vw;
+  height: 90vh;
+  display: inline-block;
+  font-size: 0;
+}
+
+#left {
+  height: 100vh;
+  max-height: 100vh;
+}
+
+#footer p {
+  text-align: center;
+  width: 80vw;
+  display: block;
+  font-size: 1.75vw;
+  line-height: 5vh;
+}
+
+#footer table tbody tr td {
+  vertical-align: middle;
+  height: 10vh;
+}
+
+#footer {
+  width: 80vw;
+  height: 10vh;
+  position: absolute;
+  top: 100%;
+  left: 20vw;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  font-size: 0;
+  background-color: #D8D8D8;
+  dispaly: none /*HIDE FOR NOW*/
+}
+
+#main {
+  display: inline-block;
+  width: 80vw;
+  height: 100vh;
+  font-size: 0;
+  background-color: #f6f6f6;
+  position: absolute;
+  top: 0;
+  left: 20vw;
+}
+
+
+#date, #time {
+  font-size: 3vw;
+}
+
+#datetime {
+  height: 25vh;
+  background-color: #C34614;
+  text-align: center;
+}
+
+#datetime table tbody tr td {
+  vertical-align: middle;
+  height: 25vh;
+}
+
+#ethsbell {
+  height: 75vh;
+  background-color: #1A2741;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#ethsbell table tbody tr td {
+  vertical-align: middle;
+  height: 75vh;
+  width: 20vw;
+}
+
+span, p {
+  font-family: 'Roboto', sans-serif;
+}
+
+#left span {
+  color: white;
+}
+
+#time {
+  font-weight: bold;
+}
+
+#timeleft {
+  font-size: 2.25vw;
+  margin: .25vw;
+}
+
+.spacer {
+  padding-bottom: 1vw;
+  display: block;
+}
+
+#ethsbell {
+  text-align: center;
+}
+
+#wildkit {
+  width: 15vw;
+  padding-bottom: 1vw;
+  margin: 0 auto;
+}
+
+.divider {
+  width: 2vh;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  border-bottom: 2px solid #cdcdcd;
+  margin-bottom: 1vw;
+}
+
+#footer .fas {
+  display: inline;
+}
+
+#main {
+  text-align: center;
+  z-index: -2;
+}
+
+#message {
+  font-size: 7.5vw;
+  line-height: 90vh;
+  vertical-align: middle;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+iframe {
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
