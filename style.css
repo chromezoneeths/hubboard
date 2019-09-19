@@ -198,6 +198,8 @@ span, p {
 }
 
 iframe {
+  width: 80vw;
+  height: 100vh;
   right: 0;
   position: absolute;
   z-index: -1;
