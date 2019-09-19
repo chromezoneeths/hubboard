@@ -115,6 +115,7 @@ span {
 #datetime {
   height: 25vh;
   background-color: #C34614;
+  cursor: none;
   text-align: center;
 }
 
