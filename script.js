@@ -146,7 +146,7 @@ var interval = setInterval(reload, DELAY * 1000);
 
 function appendFrame() {
   var iframe = document.createElement('iframe');
-  iframe.src = "https://docs.google.com/presentation/d/e/2PACX-1vSCj5Rsfp3Gdfy019a1eC3LY1wkdb1EFyEsjJs617i2BJibS-tM42IqSIWNTFZSfyXmnuIf1Dz3z3je/embed?start=true&loop=true&delayms=10000&rm=minimal";
+  iframe.src = "https://docs.google.com/presentation/d/e/2PACX-1vSCj5Rsfp3Gdfy019a1eC3LY1wkdb1EFyEsjJs617i2BJibS-tM42IqSIWNTFZSfyXmnuIf1Dz3z3je/embed?start=true&loop=true&delayms=5000&rm=minimal";
   iframe.height = window.innerHeight;
   iframe.width = window.innerWidth;
   sel('#main').innerHTML = '';
