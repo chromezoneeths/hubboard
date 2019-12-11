@@ -2,16 +2,17 @@
 
 var PERIODS_PER_DAY = 10;
 var slotList = ["Early Bird", "1st Period", "2nd Period", "3rd Period", "4th Period", "5th Period", "6th Period", "7th Period", "8th Period", "9th Period"];
-var DELAY = 15;
+var DELAY = 5;
+var presentation = "https://docs.google.com/presentation/d/e/2PACX-1vSA963eTmjxEYQw54LxeQUNyudwltnaiICcIzj0JL-GvcQpjnoJCt85jcstAd0FxS2Qwvg0a2Ac_XPh/embed?start=true&loop=true&delayms=5000&rm=minimal" //"https://docs.google.com/presentation/d/e/2PACX-1vSCj5Rsfp3Gdfy019a1eC3LY1wkdb1EFyEsjJs617i2BJibS-tM42IqSIWNTFZSfyXmnuIf1Dz3z3je/embed?start=true&loop=true&delayms=5000&rm=minimal";
+var hubImg = "image url"; // replace with canvas
 
 var weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-var sheetStart = 1;
 var currentDay;
 var dayOfWeek;
 
 // GLOBAL VARIABLES
 
-var currentlyShowing, currentPeriod, timeLeft;
+var currentlyShowing, currentPeriod, timeLeft, hubcal;
 
 
 //QUICK SELECT
@@ -115,7 +116,9 @@ function getParameterByName(name, url) {
 }
 
 function get() {
-
+  
+  hubcal = "Hub Calendar";
+  
 
   var mocktime = getParameterByName("mock_time");
 
@@ -133,11 +136,20 @@ function get() {
     var d;
     currentPeriod = data.theSlot;
     timeLeft = data.timeLeftInPeriod;
-
-    if (currentPeriod == null) {
-      sel('#timeleft').innerHTML = '';
+    
+    
+    if(sel("#timeleft").innerHTML.split(" ").slice(2).join(" ").startsWith("ends in")){
+      sel("#timeleft").innerHTML = "<img src='"+hubImg+"' alt='Bell Schedule'>";
+    }else if (currentPeriod == null) {
+      sel('#timeleft').innerHTML = "<br><h2><b>"+["School's over!","School's Out!"][Math.floor(Math.random()*2)]+"</b></h2>";
     } else {
-      sel('#timeleft').innerHTML = currentPeriod + ' ends in ' + timeLeft + ' minutes.';
+      if(timeLeft=="1"){
+        sel('#timeleft').innerHTML = currentPeriod + ' ends in ' + timeLeft + ' minute.<br><br>'+hubcal;
+      }else if(timeLeft=="0"){
+        sel('#timeleft').innerHTML = currentPeriod + ' is ending!<br><br>'+hubcal;
+      }else{
+        sel('#timeleft').innerHTML = currentPeriod + ' ends in ' + timeLeft + ' minutes.<br><br>'+hubcal;
+      }
     }
   });
 }
@@ -146,7 +158,7 @@ var interval = setInterval(reload, DELAY * 1000);
 
 function appendFrame() {
   var iframe = document.createElement('iframe');
-  iframe.src = "https://docs.google.com/presentation/d/e/2PACX-1vSCj5Rsfp3Gdfy019a1eC3LY1wkdb1EFyEsjJs617i2BJibS-tM42IqSIWNTFZSfyXmnuIf1Dz3z3je/embed?start=true&loop=true&delayms=5000&rm=minimal";
+  iframe.src = presentation;
   iframe.height = window.innerHeight;
   iframe.width = window.innerWidth;
   sel('#main').innerHTML = '';
